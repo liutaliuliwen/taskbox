@@ -1,0 +1,13 @@
+# name of your action
+name: 'Chromatic Deployment'
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v1
+        - run: yarn
+        - uses: chromaui/action@v1
+          with:
+            projectToken: woss08q2vg
+            token: ${{ secrets.GITHUB_TOKEN }}
